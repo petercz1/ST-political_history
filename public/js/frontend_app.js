@@ -64,7 +64,7 @@ function clean_data(presidents) {
 
   for (var counter = 0; counter < presidents.length; counter++) {
     // show I have actually got a 'president' object
-    console.log(presidents[counter]);
+    //console.log(presidents[counter]);
 
 
     // calculate the age in years
@@ -89,7 +89,6 @@ function clean_data(presidents) {
     var end_of_office = new Date(presidents[counter].left_office);
     var time_in_office = end_of_office - start_of_office;
     // 1000 as time is stored in millisconds since midnight Jan 1 1970
-    console.log(time_in_office / (60 * 60 * 24 * 365 * 1000));
     presidents[counter].time_in_office = time_in_office / (60 * 60 * 24 * 365 * 1000);
 
   }
