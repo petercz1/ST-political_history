@@ -9,3 +9,7 @@
 .logo {
   height: 2em;
 }
+.navbar-header{
+  width: 100%;
+  padding-right: 1em;
+}
