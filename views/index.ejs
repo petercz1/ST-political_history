@@ -30,7 +30,7 @@
         </div>
 
         <form class="new_president">
-                <p ng-if=""></p>{{form.input_name.$valid}}
+                <p ng-if="!form.input_name.$valid">name is too short.</p>
             <input type="number" class="form-control" ng-model="input_number" placeholder="president no">
             <input type="text" class="form-control" name="input_name" ng-model="input_name" ng-minlength="3" placeholder="name">
             <input type="date" class="form-control" ng-model="input_birth" placeholder="birth">
