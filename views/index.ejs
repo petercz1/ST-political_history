@@ -18,7 +18,7 @@
     <h1>Political History</h1>
     <div ng-controller="presidents_data">
 
-        <p uib-alert ng-if="show" dismiss-on-timeout='1000' close="closeAlert()" ng-model="message"></p>
+        <p uib-alert ng-if="show" dismiss-on-timeout='1000' close="closeAlert()" >{{message}}</p>
         <p>
             <span>
                 No of presidents: {{presidents.length}}
