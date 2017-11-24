@@ -15,6 +15,7 @@ function do_presidents($scope, $http) {
       function (results) {
         //console.log(results);
         $scope.presidents = clean_data(results.data);
+        $scope.show = true; // show alert        
         $scope.message = 'loaded...';
       })
   }
