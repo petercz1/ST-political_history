@@ -7,7 +7,6 @@ function do_presidents($scope, $http) {
 
   $scope.sortType = 'number'; // set the default sort type
   $scope.sortReverse = false; // set the default sort order
-  $scope.show = true; // show alerts  
 
   $scope.read = function () {
     console.log('getting all presidents');
@@ -16,6 +15,7 @@ function do_presidents($scope, $http) {
         //console.log(results);
         $scope.presidents = clean_data(results.data);
         $scope.do_refresh('loaded...');
+        $scope.read();        
       })
   }
   $scope.read();
@@ -34,6 +34,7 @@ function do_presidents($scope, $http) {
       function (result) {
         console.log(result);
         $scope.do_refresh(result.data.message);
+        $scope.read();        
       }
     );
 
@@ -44,6 +45,7 @@ function do_presidents($scope, $http) {
       function (result) {
         console.log(result);
         $scope.do_refresh(result.data.message);
+        $scope.read();        
       }
     )
   };
@@ -53,6 +55,7 @@ function do_presidents($scope, $http) {
       function (result) {
         console.log(result);
        $scope.do_refresh(result.data.message);
+       $scope.read();       
       }
     )
   };
