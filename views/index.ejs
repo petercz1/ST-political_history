@@ -18,7 +18,7 @@
     <div ng-controller="presidents_data">
         <form class="navbar-form navbar-left" role="search">
             <div class="form-group">
-              <input type="text" class="form-control" placeholder="Search">
+              <input type="text" class="form-control" placeholder="Search for president" ng-model="filter_name.president">
             </div>
           </form>
           
@@ -26,9 +26,6 @@
         <p>
             <span>
                 No of presidents: {{presidents.length}}
-            </span>
-            <span>
-                <input type="text" class="form-control" placeholder="search for president" ng-model="filter_name.president">
             </span>
         </p>
         <form>
