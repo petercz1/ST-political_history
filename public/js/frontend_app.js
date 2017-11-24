@@ -14,8 +14,6 @@ function do_presidents($scope, $http) {
       function (results) {
         //console.log(results);
         $scope.presidents = clean_data(results.data);
-        //$scope.presidents = results.data;
-        console.log($scope.presidents);
       })
   }
   $scope.read();
