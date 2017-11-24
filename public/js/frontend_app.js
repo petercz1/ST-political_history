@@ -15,7 +15,7 @@ function do_presidents($scope, $http) {
       function (results) {
         //console.log(results);
         $scope.presidents = clean_data(results.data);
-        do_refresh('loaded...');
+        $scope.do_refresh('loaded...');
       })
   }
   $scope.read();
@@ -33,7 +33,7 @@ function do_presidents($scope, $http) {
     $http.post('/api/v1/create', data).then(
       function (result) {
         console.log(result);
-        do_refresh(result.data.message);        
+        $scope.do_refresh(result.data.message);
       }
     );
 
@@ -43,7 +43,7 @@ function do_presidents($scope, $http) {
     $http.put('/api/v1/update', president).then(
       function (result) {
         console.log(result);
-        do_refresh(result.data.message);        
+        $scope.do_refresh(result.data.message);
       }
     )
   };
@@ -63,7 +63,6 @@ function do_presidents($scope, $http) {
   $scope.do_refresh = function(message) {
     $scope.show = true; // show alert                
     $scope.message = message;
-    $scope.read();
   }
 }
 
