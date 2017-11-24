@@ -27,7 +27,7 @@ function do_presidents($scope, $http) {
       president: $scope.input_name,
       birth_year: $scope.input_birth,
       death_year: 0,
-      took_office: input_took_office,
+      took_office: $scope.input_took_office,
       left_office: 0,
       party: $scope.party
     }
@@ -35,17 +35,30 @@ function do_presidents($scope, $http) {
       function (result) {
         console.log(result);
         $scope.message = result.data.message;
-        $scope.read();        
+        $scope.read();
       }
     );
 
   };
   $scope.update = function (president) {
     console.log('updating president');
-    $http.
+    $http.put('/api/v1/update', president).then(
+      function (result) {
+        console.log(result);
+        $scope.message = result.data.message;
+        $scope.read();
+      }
+    )
   };
-  $scope.delete = function (prsident) {
+  $scope.delete = function (president) {
     console.log('deleting president');
+    $http.delete('/api/v1/delete/' + president._id).then(
+      function (result) {
+        console.log(result);
+        $scope.message = result.data.message;
+        $scope.read();
+      }
+    )
   };
 }
 

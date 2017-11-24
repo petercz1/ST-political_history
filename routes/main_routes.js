@@ -20,7 +20,7 @@ function do_read(req, res) {
   console.log('reading all presidents');
   PRESIDENTSCLASS.find().sort({number:1})
     .then(function (results) {
-      console.log(results);
+      //console.log(results);
       res.json(results);
     })
 }
@@ -40,7 +40,7 @@ function do_create(req, res) {
   var president = new PRESIDENTSCLASS(data);
   president.save().then(function (result) {
     console.log(result);
-    res.message({
+    res.json({
       message: 'backend saved!'
     });
   });
