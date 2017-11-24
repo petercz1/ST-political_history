@@ -21,5 +21,7 @@ body {
 .new_president{
   margin: auto;
   width: 50%;
-  border: 1px s
+  border: 1px solid lightgray;
+  border-radius: 0.5em;
+  padding: 0.5em;
 }
