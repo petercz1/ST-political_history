@@ -16,7 +16,8 @@ body {
 
 .message{
   color: gray;
-  height: 1em;
+  font-size: 18px;
+  height: 0.9em;
 }
 .navbar-header {
   width: 100%;
