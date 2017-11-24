@@ -7,6 +7,7 @@ function do_presidents($scope, $http) {
 
   $scope.sortType = 'number'; // set the default sort type
   $scope.sortReverse = false; // set the default sort order
+  $scope.show = true; // show alerts  
 
   $scope.read = function () {
     console.log('getting all presidents');
