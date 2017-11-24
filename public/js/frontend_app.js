@@ -52,7 +52,7 @@ function do_presidents($scope, $http) {
     $http.delete('/api/v1/delete/' + president._id).then(
       function (result) {
         console.log(result);
-       do_refresh(result.data.message);
+       $scope.do_refresh(result.data.message);
       }
     )
   };
@@ -60,12 +60,11 @@ function do_presidents($scope, $http) {
     console.log('closing alert');
     $scope.show = false;
   }
-}
-
-function do_refresh(message) {
-  $scope.show = true; // show alert                
-  $scope.message = message;
-  $scope.read();
+  $scope.do_refresh = function(message) {
+    $scope.show = true; // show alert                
+    $scope.message = message;
+    $scope.read();
+  }
 }
 
 function clean_data(presidents) {
