@@ -15,9 +15,13 @@
 </head>
 
 <body ng-app="presidents_app" class="container">
-    <h1>Political History</h1>
     <div ng-controller="presidents_data">
-
+        <form class="navbar-form navbar-left" role="search">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Search">
+            </div>
+          </form>
+          
         <p uib-alert ng-if="show" close="closeAlert()" dismiss-on-timeout="2000">{{message}}</p>
         <p>
             <span>
