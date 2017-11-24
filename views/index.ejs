@@ -28,13 +28,13 @@
             </span>
         </p>
         <form>
-            <input type="text" class="form-control" ng-model="input_number" placeholder="president no">
+            <input type="number" class="form-control" ng-model="input_number" placeholder="president no">
             <input type="text" class="form-control" ng-model="input_name" placeholder="name">
             <input type="text" class="form-control" ng-model="input_birth" placeholder="birth">
             <input type="date" class="form-control" ng-model="input_took_office" placeholder="took office">
-            <input type="radio" class="form-control" ng-model="party" value="Democrat"> Democrat
+            <input type="radio" ng-model="party" value="Democrat"> Democrat
             <br>
-            <input type="radio" class="form-control" ng-model="party" value="Republican"> Republican
+            <input type="radio" ng-model="party" value="Republican"> Republican
             <br>
             <button class="btn btn-primary" ng-click="create()">create new president</button>
         </form>
@@ -55,18 +55,22 @@
                             <span ng-show="sortType == 'president' && sortReverse" class="fa fa-caret-up"></span>
                         </a>
                     </th>
-                    <th><a href="#" ng-click="sortType = 'age'; sortReverse = !sortReverse">
-                        age
-                        <span ng-show="sortType == 'age' && !sortReverse" class="fa fa-caret-down"></span>
-                        <span ng-show="sortType == 'age' && sortReverse" class="fa fa-caret-up"></span>
-                    </a></th>
+                    <th>
+                        <a href="#" ng-click="sortType = 'age'; sortReverse = !sortReverse">
+                            age
+                            <span ng-show="sortType == 'age' && !sortReverse" class="fa fa-caret-down"></span>
+                            <span ng-show="sortType == 'age' && sortReverse" class="fa fa-caret-up"></span>
+                        </a>
+                    </th>
                     <th>party</th>
                     <th></th>
-                    <th><a href="#" ng-click="sortType = 'time_in_office'; sortReverse = !sortReverse">
+                    <th>
+                        <a href="#" ng-click="sortType = 'time_in_office'; sortReverse = !sortReverse">
                             years in office
                             <span ng-show="sortType == 'time_in_office' && !sortReverse" class="fa fa-caret-down"></span>
                             <span ng-show="sortType == 'time_in_office' && sortReverse" class="fa fa-caret-up"></span>
-                        </a></th>
+                        </a>
+                    </th>
                     <th>update</th>
                     <th>delete</th>
                 </tr>
@@ -93,8 +97,12 @@
                     <td>
                         {{president.time_in_office | number: 2}}
                     </td>
-                    <td><button class="btn btn-warning" ng-click="update(president)">update</button></td>
-                    <td><button class="btn btn-danger" ng-click="delete(president)">delete</button></td>
+                    <td>
+                        <button class="btn btn-warning" ng-click="update(president)">update</button>
+                    </td>
+                    <td>
+                        <button class="btn btn-danger" ng-click="delete(president)">delete</button>
+                    </td>
                 </tr>
             </tbody>
         </table>
