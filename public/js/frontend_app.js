@@ -34,6 +34,7 @@ function do_presidents($scope, $http) {
     $http.post('/api/v1/create', data).then(
       function (result) {
         console.log(result);
+        $scope.show = true; // show alert                
         $scope.message = result.data.message;
         $scope.read();
       }
@@ -45,6 +46,7 @@ function do_presidents($scope, $http) {
     $http.put('/api/v1/update', president).then(
       function (result) {
         console.log(result);
+        $scope.show = true; // show alert                
         $scope.message = result.data.message;
         $scope.read();
       }
