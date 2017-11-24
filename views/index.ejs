@@ -16,9 +16,9 @@
 
 <body ng-app="presidents_app" class="container">
     <div ng-controller="presidents_data">
-        <div class="navbar-form navbar-left">
+        <div class="navbar navbar-default">
             <a class="navbar-brand" href="#">The Presidents: {{presidents.length}} in total...</a>
-            <form>
+            <form class="navbar-form navbar-right">
                 <div class="form-group">
                     <input type="text" class="form-control" placeholder="Search for president" ng-model="filter_name.president">
                 </div>
