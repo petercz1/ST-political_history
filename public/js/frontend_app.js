@@ -1,6 +1,6 @@
 console.log('loaded frontend app');
 
-var frontend_app = angular.module('presidents_app', [])
+var frontend_app = angular.module('presidents_app', ['ui.bootstrap'])
 frontend_app.controller('presidents_data', do_presidents);
 
 function do_presidents($scope, $http) {
