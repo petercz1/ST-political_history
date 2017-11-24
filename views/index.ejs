@@ -17,13 +17,15 @@
 <body ng-app="presidents_app" class="container">
     <div ng-controller="presidents_data">
         <div class="navbar navbar-default">
-            <a class="navbar-brand" href="#">The Presidents: {{presidents.length}} in total...</a>
-            <form class="navbar-form navbar-right">
-                <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Search for president" ng-model="filter_name.president">
-                </div>
-            </form>
-            <p uib-alert ng-if="show" close="closeAlert()" dismiss-on-timeout="2000">{{message}}</p>
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">The Presidents: {{presidents.length}} in total...</a>
+                <form class="navbar-form navbar-right">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search for president" ng-model="filter_name.president">
+                    </div>
+                </form>
+                <p uib-alert ng-if="show" close="closeAlert()" dismiss-on-timeout="2000">{{message}}</p>
+            </div>
         </div>
         <form>
             <input type="number" class="form-control" ng-model="input_number" placeholder="president no">
