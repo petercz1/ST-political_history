@@ -83,12 +83,12 @@
                 <tr ng-class="{'republican': president.party == 'Republican', 'democrat': president.party == 'Democratic'}">
                     <td>{{president._id}}</td>
                     <td>
-                        <input type="text" ng-model="president.president">
+                        <input type="text" class="form-control" ng-model="president.president">
                     </td>
                     <td>
                         {{president.age}}</td>
                     <td>
-                        <input type="text" ng-model="president.party">
+                        <input type="text" class="form-control" ng-model="president.party">
                     </td>
                     <td>
                         <span ng-if="president.party == 'Republican'">
