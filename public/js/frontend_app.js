@@ -17,7 +17,6 @@ function do_presidents($scope, $http) {
       })
   }
   $scope.read();
-
   $scope.create = function () {
     console.log('creating new president');
     var data = {
@@ -58,6 +57,10 @@ function do_presidents($scope, $http) {
       }
     )
   };
+  $scope.closeAlert = function () {
+    console.log('closing alert');
+    $scope.show = false;
+  }
 }
 
 function clean_data(presidents) {
